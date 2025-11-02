@@ -1,171 +1,160 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berlin💕</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #121212;
-      color: #f2f2f2;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #1a1a1a;
-      text-align: center;
-      padding: 30px;
-      border-bottom: 2px solid #ff4fa3;
-    }
-
-    h1 {
-      color: #ff4fa3;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #ccc;
-      font-size: 1.2rem;
-    }
-
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 40px auto;
-      max-width: 1000px;
-    }
-
-    .category {
-      background-color: #1f1f1f;
-      border-radius: 15px;
-      padding: 20px;
-      width: 280px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(255, 79, 163, 0.2);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .category:hover {
-      box-shadow: 0 0 20px rgba(255, 79, 163, 0.5);
-      transform: translateY(-5px);
-    }
-
-    .category h2 {
-      color: #ff4fa3;
-      margin-bottom: 10px;
-    }
-
-    .options {
-      display: none;
-      margin-top: 15px;
-      animation: fadeIn 0.4s ease-in-out;
-    }
-
-    .option a {
-      display: block;
-      background-color: #ff4fa3;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      padding: 10px;
-      margin: 8px 0;
-      transition: background-color 0.3s ease;
-    }
-
-    .option a:hover {
-      background-color: #ff79c6;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid #ff4fa3;
-      color: #888;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berlin Date Planner 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    background-color: #121212;
+    color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  header {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-bottom: 2px solid #ff4fa3;
+  }
+  h1 {
+    color: #ff4fa3;
+    font-size: 2.5rem;
+    margin: 0 0 10px;
+  }
+  .categories, .detail-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 1000px;
+  }
+  .category, .option {
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .category:hover, .option a:hover {
+    box-shadow: 0 0 20px rgba(255, 79, 163, 0.5);
+    transform: translateY(-5px);
+  }
+  .category h2 {
+    color: #ff4fa3;
+    margin: 0;
+  }
+  .option a {
+    display: block;
+    background-color: #ff4fa3;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+  }
+  .option a:hover {
+    background-color: #ff79c6;
+  }
+  .back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #ff4fa3;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .back-btn:hover {
+    background-color: #ff79c6;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Berlin Date Planner 💕</h1>
-    <p>Wähle weise meine kleine 🌃</p>
-  </header>
 
-  <div class="categories">
+<header>
+  <h1>Berlin Date Planner 💕</h1>
+  <p>Wählt euer perfektes Date! 🌃</p>
+</header>
 
-    <!-- Kategorie 1 -->
-    <div class="category">
-      <h2>🍽️ Essen gehen</h2>
-      <div class="options">
-        <div class="option"><a href="https://maps.app.goo.gl/d4Z5T4cR6M2aWkkz5" target="_blank">NENI Berlin (Skyline & orientalisch)</a></div>
-        <div class="option"><a href="https://maps.app.goo.gl/vHKeT6uw6A8z9JL89" target="_blank">Spindler (Romantisch am Kanal)</a></div>
-        <div class="option"><a href="https://maps.app.goo.gl/XbMDEkG6mHzdP1tw6" target="_blank">Il Calice (Italienisch & elegant)</a></div>
-      </div>
-    </div>
+<div class="categories">
+  <div class="category" data-cat="essen"><h2>🍽️ Essen gehen</h2></div>
+  <div class="category" data-cat="cafe"><h2>☕ Cute Café & Süßes</h2></div>
+  <div class="category" data-cat="aktiv"><h2>💞 Romantische Aktivitäten</h2></div>
+  <div class="category" data-cat="bars"><h2>🍸 Night Date / Bars</h2></div>
+  <div class="category" data-cat="wellness"><h2>🧖 Wellness & Entspannung</h2></div>
+</div>
 
-    <!-- Kategorie 2 -->
-    <div class="category">
-      <h2>☕ Cute Café & Süßes</h2>
-      <div class="options">
-        <div class="option"><a href="https://maps.app.goo.gl/2yUuCTn4KtzP6vYx8" target="_blank">House of Small Wonder</a></div>
-        <div class="option"><a href="https://maps.app.goo.gl/S4jWdvFXUqzM53Sf7" target="_blank">Princess Cheesecake</a></div>
-        <div class="option"><a href="https://maps.app.goo.gl/Y9tFXqYx8N45oJuw9" target="_blank">Einstein Unter den Linden</a></div>
-      </div>
-    </div>
+<div class="detail-view" style="display:none;">
+  <h2 id="detail-title"></h2>
+  <div id="options-container"></div>
+  <a class="back-btn" id="back-btn">⬅ Zurück</a>
+</div>
 
-    <!-- Kategorie 3 -->
-    <div class="category">
-      <h2>💞 Romantische Aktivitäten</h2>
-      <div class="options">
-        <div class="option"><a href="https://www.berlinerfernsehturm.de/" target="_blank">Fernsehturm Dinner</a></div>
-        <div class="option"><a href="https://www.sternundkreis.de/" target="_blank">Bootsfahrt auf der Spree</a></div>
-        <div class="option"><a href="https://www.tempelhoferfeld.de/" target="_blank">Picknick am Tempelhofer Feld</a></div>
-      </div>
-    </div>
+<script>
+  const data = {
+    essen: [
+      {name: "NENI Berlin (Skyline & orientalisch)", link: "https://www.google.com/maps/place/NENI+Berlin/@52.5009926,13.4036079,17z/"},
+      {name: "Spindler (Romantisch am Kanal)", link: "https://www.google.com/maps/place/Spindler/@52.505612,13.44089,17z/"},
+      {name: "Il Calice (Italienisch & elegant)", link: "https://www.google.com/maps/place/Il+Calice/@52.512165,13.403573,17z/"}
+    ],
+    cafe: [
+      {name: "House of Small Wonder", link: "https://www.google.com/maps/place/House+of+Small+Wonder/@52.53292,13.38894,17z/"},
+      {name: "Princess Cheesecake", link: "https://www.google.com/maps/place/Princess+Cheesecake/@52.51355,13.42499,17z/"},
+      {name: "Einstein Unter den Linden", link: "https://www.google.com/maps/place/Einstein+Unter+den+Linden/@52.5163,13.3892,17z/"}
+    ],
+    aktiv: [
+      {name: "Fernsehturm Dinner", link: "https://www.berliner-fernsehturm.de/de/restaurant"},
+      {name: "Bootsfahrt auf der Spree", link: "https://www.sternundkreis.de/"},
+      {name: "Picknick am Tempelhofer Feld", link: "https://www.tempelhoferfeld.de/"}
+    ],
+    bars: [
+      {name: "Bar Tausend (geheime Tür, stylisch)", link: "https://www.google.com/maps/place/Bar+Tausend/@52.521824,13.398582,17z/"},
+      {name: "Buck & Breck (Hidden Speakeasy)", link: "https://www.google.com/maps/place/Buck+%26+Breck/@52.5231,13.3881,17z/"},
+      {name: "Klunkerkranich Rooftop", link: "https://www.google.com/maps/place/Klunkerkranich/@52.4965,13.403,17z/"}
+    ],
+    wellness: [
+      {name: "Vabali Spa Berlin", link: "https://www.vabali.de/berlin/"},
+      {name: "Liquidrom (mit Musik unter Wasser)", link: "https://www.liquidrom-berlin.de/"},
+      {name: "Stadtbad Neukölln (historisches Bad)", link: "https://www.stadtbad-neukoelln.berlin/"}
+    ]
+  };
 
-    <!-- Kategorie 4 -->
-    <div class="category">
-      <h2>🍸 Night Date / Bars</h2>
-      <div class="options">
-        <div class="option"><a href="https://maps.app.goo.gl/rENvzyjXSWLmsvJ79" target="_blank">Bar Tausend (geheime Tür, stylisch)</a></div>
-        <div class="option"><a href="https://maps.app.goo.gl/4hL2PZc28HZcQh6r7" target="_blank">Buck & Breck (Hidden Speakeasy)</a></div>
-        <div class="option"><a href="https://maps.app.goo.gl/2KvDdwvPNcMFx1xZ7" target="_blank">Klunkerkranich Rooftop</a></div>
-      </div>
-    </div>
+  const categoriesDiv = document.querySelector('.categories');
+  const detailView = document.querySelector('.detail-view');
+  const detailTitle = document.getElementById('detail-title');
+  const optionsContainer = document.getElementById('options-container');
+  const backBtn = document.getElementById('back-btn');
 
-    <!-- Kategorie 5 -->
-    <div class="category">
-      <h2>🧖 Wellness & Entspannung</h2>
-      <div class="options">
-        <div class="option"><a href="https://www.vabali.de/berlin/" target="_blank">Vabali Spa Berlin</a></div>
-        <div class="option"><a href="https://liquidrom-berlin.de/" target="_blank">Liquidrom (mit Musik unter Wasser)</a></div>
-        <div class="option"><a href="https://www.stadtbad-neukoelln.berlin/" target="_blank">Stadtbad Neukölln (historisches Bad)</a></div>
-      </div>
-    </div>
-
-  </div>
-
-  <footer> ❤️ </footer>
-
-  <script>
-    // Kategorien interaktiv machen
-    document.querySelectorAll('.category').forEach(cat => {
-      cat.addEventListener('click', () => {
-        const options = cat.querySelector('.options');
-        options.style.display = options.style.display === 'block' ? 'none' : 'block';
+  document.querySelectorAll('.category').forEach(cat => {
+    cat.addEventListener('click', () => {
+      const key = cat.dataset.cat;
+      categoriesDiv.style.display = 'none';
+      detailView.style.display = 'flex';
+      detailTitle.textContent = cat.textContent;
+      optionsContainer.innerHTML = '';
+      data[key].forEach(item => {
+        const a = document.createElement('a');
+        a.href = item.link;
+        a.target = '_blank';
+        a.textContent = item.name;
+        a.className = 'option';
+        optionsContainer.appendChild(a);
       });
     });
-  </script>
+  });
+
+  backBtn.addEventListener('click', () => {
+    detailView.style.display = 'none';
+    categoriesDiv.style.display = 'flex';
+  });
+</script>
+
 </body>
 </html>
